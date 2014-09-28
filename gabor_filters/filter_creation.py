@@ -1,6 +1,7 @@
 '''
 Gabor filters 1D, 2D
 Gabor = gaussian_filter * sinusoid_carrier  (A sinusouid signal modulated by a gaussian).
+See http://mplab.ucsd.edu/tutorials/gabor.pdf
 '''
 import numpy as np
 import matplotlib.pyplot as plt
@@ -60,5 +61,6 @@ def simple_gabor2d(K=1.0, theta=0, x0=0, y0=0, a=1, b=1,u0=1./80., v0=1./80., P=
         plt.imshow(gabor_imag)
         plt.title("Gabor filter (imag)")
         plt.show()
+    return gabor_real, gabor_imag
 
 simple_gabor2d(a=1/50., b=1/40., theta=-45, P=0, size=(128,128))
